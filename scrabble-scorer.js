@@ -34,7 +34,7 @@ function oldScrabbleScorer(word) {
   let numericalScore = 0;
 
   for (let i=0; i<word.length; i++){
-    numericalScore += Number(newPointStructure[word[i]]);    
+    numericalScore += newPointStructure[word[i]];
   }
   return numericalScore;
  }
@@ -129,7 +129,7 @@ function transform(object) {
   };
   for (item in object){
     for (i=0; i<object[item].length; i++){
-      objectTransformed [object[item][i].toLowerCase()] = item;
+      objectTransformed [object[item][i].toLowerCase()] = Number(item);
     }
   }
   return objectTransformed;
