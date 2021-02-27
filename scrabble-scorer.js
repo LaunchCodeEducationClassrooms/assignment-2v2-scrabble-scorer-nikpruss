@@ -47,7 +47,7 @@ function initialPrompt() {
    return input.question("Enter a word to score: ");
 };
 
-function simpleScorer(word){
+function simpleScore(word){
   word = word.toUpperCase();
   let numericalScore = 0;
 
@@ -117,7 +117,7 @@ let scrabbleScore = {
   }
 };
 
-const scoringAlgorithms = [simpleScore, vowelBonusScore, scrabbleScore];
+const scoringAlgorithms = [simpleScorer, vowelBonusScorer, scrabbleScorer];
 
 function scorerPrompt() {
   return scoringAlgorithms[ input.question ("Which scoring algorithm would you like to use? \n0 - Simple: One point per character \n1 - Vowel Bonus: Vowels are worth 3 points\n2 - Scrabble: Uses scrabble point system\nEnter 0, 1, or 2: ") ];
