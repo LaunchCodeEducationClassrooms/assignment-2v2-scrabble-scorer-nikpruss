@@ -73,48 +73,19 @@ function vowelBonusScore(word){
   return numericalScore;
 }
 let simpleScorer = {
-  name: "Simple Score",
-  description: "Each letter is worth 1 point.",
-  scorerFunction: function (word){
-    word = word.toUpperCase();
-    let numericalScore = 0;
-
-    for (let i = 0; i < word.length; i++) {
-     numericalScore ++;
-    }
-
-    return numericalScore;
-  }
+  name: 'Simple Score',
+  description: 'Each letter is worth 1 point.',
+  scorerFunction: simpleScore
 };
 let vowelBonusScorer = {
-  name: "Bonus Vowels",
-  description: "Vowels are 3 pts, consonants are 1 pt.",
-  scorerFunction: function (word){
-    word = word.toUpperCase();
-    let numericalScore = 0;
-
-    for (let i = 0; i < word.length; i++) {
-      if(word[i] == "A" || word[i] == "E" || word[i] == "I" || word[i] == "O" || word[i] == "U" ){
-       numericalScore += 3;
-      }else {
-        numericalScore ++;
-      }
-    }
-    return numericalScore;
-  }
+  name: 'Bonus Vowels',
+  description: 'Vowels are 3 pts, consonants are 1 pt.',
+  scorerFunction: vowelBonusScore
 };
 let scrabbleScorer = {
-  name: "Scrabble",
-  description: "The traditional scoring algorithm.",
-  scorerFunction: function (word){
-    word = word.toLowerCase();
-	  let numericalScore = 0;
-
-    for (let i=0; i<word.length; i++){
-     numericalScore += Number(newPointStructure[word[i]]);    
-    }
-    return numericalScore;
-  }
+  name: 'Scrabble',
+  description: 'The traditional scoring algorithm.',
+  scorerFunction: scrabbleScore
 };
 
 const scoringAlgorithms = [simpleScorer, vowelBonusScorer, scrabbleScorer];
