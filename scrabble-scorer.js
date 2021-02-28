@@ -29,7 +29,7 @@ function oldScrabbleScorer(word) {
 	return letterPoints;
  }
 
- function scrabbleScorer(word){
+ function scrabbleScore(word){
   word = word.toLowerCase();
   let numericalScore = 0;
 
@@ -58,7 +58,7 @@ function simpleScore(word){
   return numericalScore;
 }
 
-function vowelBonusScorer(word){
+function vowelBonusScore(word){
   word = word.toUpperCase();
   let numericalScore = 0;
 
@@ -72,7 +72,7 @@ function vowelBonusScorer(word){
 
   return numericalScore;
 }
-let simpleScore = {
+let simpleScorer = {
   name: "Simple Score",
   description: "Each letter is worth 1 point.",
   scorerFunction: function (word){
@@ -86,7 +86,7 @@ let simpleScore = {
     return numericalScore;
   }
 };
-let vowelBonusScore = {
+let vowelBonusScorer = {
   name: "Bonus Vowels",
   description: "Vowels are 3 pts, consonants are 1 pt.",
   scorerFunction: function (word){
@@ -103,7 +103,7 @@ let vowelBonusScore = {
     return numericalScore;
   }
 };
-let scrabbleScore = {
+let scrabbleScorer = {
   name: "Scrabble",
   description: "The traditional scoring algorithm.",
   scorerFunction: function (word){
